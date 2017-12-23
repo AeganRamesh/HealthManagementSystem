@@ -1,0 +1,46 @@
+package excelitac.training;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ThreadSample {
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver","D:\\\\Work\\\\chromedriver_win32\\\\chromedriver.exe");
+	WebDriver driver =new ChromeDriver();
+	driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS); 
+	String baseUrl="http://excelitac.in/selenium-practice/practice-page-3/";
+	driver.get(baseUrl);
+	//Thread.sleep(5000);
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.manage().window().maximize();
+	/*WebElement w1=driver.findElement(By.linkText("Selenium Practice Page 2"));
+	WebDriverWait ewait=new WebDriverWait(driver, 10);
+	ewait.until(ExpectedConditions.elementToBeClickable(w1));
+	w1.click();*/
+	Thread.sleep(3000);
+	WebElement w2=driver.findElement(By.xpath("//button[text()='click me']"));
+	w2.click();
+	String s=driver.switchTo().alert().getText();
+	driver.switchTo().alert().accept();
+    System.out.println(s);
+    
+    Thread.sleep(2000);
+	WebElement w3=driver.findElement(By.xpath("//button[text()='press me']"));
+	w3.click();
+	Thread.sleep(2000);
+	driver.switchTo().alert().sendKeys("Ramesh");
+	driver.switchTo().alert().accept();
+	WebElement w4=driver.findElement(By.xpath("//label[@id='yourname']"));
+	System.out.println(w4.getText());
+	
+	//WebElement w5=driver.findElement(By.xpath("//button[text()='press me']//following::button[2]"));
+	WebElement w5=driver.findElement(By.xpath("//button[text()='press me']//preceding::button[1]"));
+	w5.click();
+	}
+}
