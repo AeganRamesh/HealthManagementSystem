@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Title> Student Registration Form</Title>
+
+</head>
+<body>
+
+<form href="http://www.google.com">
+<br>
+<br>
+<table cellpading="2" bgcolor="80FF33" align="left" cellspacing="2">
+
+<tr>
+<td colspan=5>
+<left><font size=6><b>Student Registration Form</b></font>
+</left>
+</td>
+</tr>
+
+<tr>
+<td>Student Name:</td>
+<td><input type="text" name="studentnamemain"></td>
+</tr>
+
+
+<tr>
+<td>Father Name:</td>
+<td><input type="text" name="fathername"></td>
+</tr>
+
+<tr>
+<td>Date of Birth:</td>
+<td><input type="text" name="dob"></td>
+</tr>
+
+<tr>
+<td>Gender:</td>
+<td><input type="radio" name="sex" value="male">Male
+<input type="radio" name="sex" value="female">Female
+</td>
+</tr>
+
+<tr>
+<td>State:</td>
+<td><select name="State">
+<option value="-1" selected>select..</option>
+<option value="tamilnadu">Tamil Nadu</option>
+<option value="andhra">Andhra Pradesh</option>
+<option value="mp">Madhya Pradesh</option>
+<option value="ka">Karnataka</option>
+<option value="kl">Kerala</option>
+<option value="gj">Gujarat</option>
+<option value="tl">Telungana</option>
+<option value="rj">Rajasthan</option>
+</select></td></tr>
+
+<tr>
+<td>Pin Code:</td>
+<td><input type="text" name="pin"></td>
+</tr>
+
+<tr>
+<td>Languages Known:</td>
+<td>
+<input type="checkbox" name="lang" value="tamil">Tamil
+<input type="checkbox" name="lang" value="english">English
+<input type="checkbox" name="lang" value="Telugu">Telugu
+<input type="checkbox" name="lang" value="Hindi">Hindi
+</td>
+</tr>
+
+<tr>
+<td>Course:</td>
+<td><select name="course">
+<option value="-1" selected>select..</option>
+<option value="bca">BCA</option>
+<option value="bsc">B.Sc</option>
+<option value="bcom">B.Com</option>
+<option value="ba">BA</option>
+<option value="bba">BBA</option>
+<option value="bbm">BBM</option>
+</select></td></tr>
+
+<tr>
+<td>Mobile Number:</td>
+<td><input type="text" name="mobile"></td>
+</tr>
+<tr>
+<td>Email:</td>
+<td><input type="text" name="email"></td>
+</tr>
+
+<tr>
+<td><input type="reset"></td>
+<td colspan="2"><input type="button" value="Submit" onClick="conf()" /></td>
+</tr>
+
+<button type="button"><a href="http://gobiartscollege.org/" >Help</a></button>
+</table>
+
+
+</form>
+
+<script type="text/javascript">
+function conf()
+{
+var con=confirm("Do you want to submit for sure?");
+
+if(con == true)
+{
+prompt("data is submitted successsfully");
+}
+
+
+}
+</script>
+</body>
+</html>
